@@ -1,0 +1,183 @@
+<div class="container my-4">
+  <div class="row">
+  <!-- ================= SIGN-UP FORM ================= -->
+    <div class="col-md-6 offset-md-3">
+      <form [formGroup]="signUpfrom" class="form-container p-4 border rounded shadow-sm">
+        <h3 class="mb-3 text-center">User Registration Form</h3>
+        <!-- Name -->
+        <div class="form-group mb-3">
+          <label>Name</label>
+          <input type="text" class="form-control" formControlName="name" placeholder="Enter your name">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group mb-3">
+          <label>Email</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="Enter your email">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group mb-3">
+          <label>Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+        </div>
+
+        <!-- Role -->
+        <div class="form-group mb-3">
+          <label>Role</label>
+          <select class="form-select" formControlName="role">
+            <option value="">Select role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="manager">Manager</option>
+          </select>
+        </div>
+
+        <!-- Mobile -->
+        <div class="form-group mb-3">
+          <label>Mobile Number</label>
+          <input type="tel" class="form-control" formControlName="mobNumber" placeholder="Enter mobile number">
+        </div>
+
+        <!-- Address Group -->
+        <div formGroupName="address" class="border p-3 rounded mb-3">
+          <h5>Address</h5>
+
+          <div class="form-group mb-3">
+            <label>Address Line 1</label>
+            <input type="text" class="form-control" formControlName="address1" placeholder="Street / House No">
+          </div>
+
+          <div class="form-group mb-3">
+            <label>Address Line 2</label>
+            <input type="text" class="form-control" formControlName="address2" placeholder="Landmark (optional)">
+          </div>
+
+          <div class="form-group mb-3">
+            <label>City</label>
+            <input type="text" class="form-control" formControlName="city" placeholder="Enter city">
+          </div>
+
+          <div class="form-group mb-3">
+            <label>State</label>
+            <input type="text" class="form-control" formControlName="state" placeholder="Enter state">
+          </div>
+
+          <div class="form-group mb-3">
+            <label>Pincode</label>
+            <input type="text" class="form-control" formControlName="zipcode" placeholder="Enter pincode">
+          </div>
+        </div>
+
+        <!-- Upload Photo -->
+        <div class="form-group mb-3">
+          <label>Upload Photo</label>
+          <input type="file" class="form-control" (change)="onFileSelected($event)"
+            accept="image/*">
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group mb-3">
+          <label>Gender</label>
+          <div>
+            <label class="me-4">
+              <input type="radio" value="male" formControlName="gender"> Male
+            </label>
+
+            <label class="me-4">
+              <input type="radio" value="female" formControlName="gender"> Female
+            </label>
+
+            <label>
+              <input type="radio" value="other" formControlName="gender"> Other
+            </label>
+          </div>
+        </div>
+
+        <!-- Language -->
+        <div class="form-group mb-3">
+          <label>Language</label>
+          <select class="form-select" formControlName="language">
+            <option value="">Select Language</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Kannada">Kannada</option>
+          </select>
+        </div>
+
+        <!-- DOB -->
+        <div class="form-group mb-3">
+          <label>Date of Birth</label>
+          <input type="date" class="form-control" formControlName="dob">
+        </div>
+
+        <!-- Age -->
+        <div class="form-group mb-3">
+          <label>Age</label>
+          <input type="number" class="form-control" formControlName="age" placeholder="Enter age">
+        </div>
+
+        <!-- About You -->
+        <div class="form-group mb-3">
+          <label>About You</label>
+          <textarea class="form-control" formControlName="aboutUs" rows="3"
+            placeholder="Tell something about yourself"></textarea>
+        </div>
+
+        <!-- Buyer / Seller -->
+        <div class="form-group mb-3">
+          <label>What do you want?</label>
+          <select class="form-control" formControlName="roleChoice">
+            <option value="">Select option</option>
+            <option value="seller">Seller</option>
+            <option value="buyer">Buyer</option>
+          </select>
+        </div>
+
+        <!-- Agree -->
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" formControlName="agree">
+          <label class="form-check-label">I agree to terms & conditions</label>
+        </div>
+
+        <!-- Submit -->
+        <button type="button" (click)="onSubmitSignUp()" class="btn btn-primary w-100">
+          Register
+        </button>
+
+        <p class="mt-2 text-center sim-pointer" routerLink="/sign-in">
+          Already have an account? Click here to login
+        </p>
+
+      </form>
+    </div>
+
+    <!-- ================= SIGN-IN FORM ================= -->
+    <div class="col-md-6 offset-md-3" >
+      <form [formGroup]="signInfrom" class="form-container p-4 border rounded shadow-sm">
+
+        <h3 class="mb-3">Login</h3>
+
+        <div class="form-group mb-3">
+          <label>Email</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group mb-3">
+          <label>Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Enter password">
+        </div>
+
+        <button class="btn btn-primary w-100">Login</button>
+
+        <p class="mt-2 sim-pointer" routerLink="/sign-up">
+          Don't have an account? Click here to register
+        </p>
+
+      </form>
+    </div>
+
+  </div>
+</div>
