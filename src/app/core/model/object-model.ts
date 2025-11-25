@@ -13,7 +13,6 @@ export class User {
     agree?: boolean;
     age?: number;
     aboutUs?: string;
-    roleChoice?: string;
 }
 export class Address {
     addressLine1?: string;

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -9,6 +9,13 @@ import { RouterLink } from "@angular/router";
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+
+  constructor( private route: Router) { } 
+
+  ngOnInit(): void {
+    
+    
+  }
 
 }

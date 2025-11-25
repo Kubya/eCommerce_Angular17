@@ -18,7 +18,7 @@ export class LogninUpService {
   constructor(private apiService: ApiService, private http: HttpClient) { }
   
   aurthLogin(user_name: any, password: any) {
-    return this.apiService.get(this.login_url + '/user?email=' + user_name + '&password=' + password);
+    return this.apiService.get(this.login_url + '/users?email=' + user_name + '&password=' + password);
   }
   
   UserRegistration(userData: any) {
@@ -26,7 +26,12 @@ export class LogninUpService {
   }
 
   autoSaveFormData(formData: FormData): Observable<any> {
+    // Autosave endpoint should be different from full registration
     return this.apiService.post(this.reg_url + '/users/autosave', formData);
+  }
+
+  getSavedFormData(email: string): Observable<any> {
+    return this.apiService.get(this.reg_url + '/users?email=' + email);
   }
   
   adminLogin(user_name: any, password: any) {
